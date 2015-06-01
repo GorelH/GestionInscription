@@ -1,0 +1,112 @@
+﻿<Window x:Class="GestionInscription.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" Height="550" Width="1020" Background="Beige">
+
+    <Window.Resources>
+
+       
+
+        <Style TargetType="TextBlock" x:Key="ButtonTextStyle">
+            <Setter Property="TextElement.FontSize" Value="25"/>
+            <Setter Property="TextElement.Foreground" Value="Blue"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Opacity" Value=".3"/>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Background="Transparent" Margin="50,50,50,50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition  Height=".5 *"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".5 *"/>
+            <ColumnDefinition Width="*"/>
+            <!--<ColumnDefinition Width=".5*"/>
+            <ColumnDefinition Width="*"/>-->
+        </Grid.ColumnDefinitions>
+        <!--<Image Source="/Icons/mainicon.jpg" />-->
+
+        <Button Name="_ADHERANT_BUTTON" Style="{DynamicResource  FontButton}" Click="_ADHERANT_BUTTON_Click">
+            <StackPanel Margin="0,0,0,-10">
+                <!--<Image Source = "{StaticResource StudentsIcon}" Width="150" Height="150" />-->
+                <TextBlock Text="Adherants" Style="{DynamicResource ButtonTextStyle}"/>
+            </StackPanel>
+            <Button.ToolTip>
+                <ToolTip PlacementTarget="{Binding ElementName= _STUDENT_BUTTON}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Adherants" Style="{StaticResource ToolTipHeaderStyle}"></Label>
+                        <TextBlock Style="{StaticResource ToolTipTextStyle}" TextWrapping="Wrap">
+                        Enregister Les Adherants 
+                        </TextBlock>
+                    </StackPanel>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+
+        <Button Name="_INSCRIPTION_BUTTON" Grid.Row="0" Grid.Column="2" Style="{DynamicResource  FontButton}" Click="_INSCRIPTION_BUTTON_Click">
+            <StackPanel Margin="0,0,0,-10">
+                <!--<Image Source = "{StaticResource PedagogyIcon}" Width="150" Height="150"/>-->
+                <TextBlock Text="Inscriptions" Style="{DynamicResource ButtonTextStyle}"/>
+            </StackPanel>
+            <Button.ToolTip>
+                <ToolTip PlacementTarget="{Binding ElementName= _PEDAGOGIE_BUTTON}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Inscriptions" Style="{StaticResource ToolTipHeaderStyle}"></Label>
+                        <TextBlock Style="{StaticResource ToolTipTextStyle}"  TextWrapping="Wrap">
+                        Inscrire les Adherants
+                        </TextBlock>
+                    </StackPanel>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+
+        <Button Name="_GROUP_BUTTON" Grid.Column="2" Grid.Row="2" Style="{DynamicResource FontButton}" Click="_GROUP_BUTTON_OnClick">
+            <StackPanel Margin="0,0,0,-10">
+                <!--<Image Source = "{StaticResource StaffsIcon}" Width="150" Height="150"/>-->
+                <TextBlock Text="Groupes" Style="{DynamicResource ButtonTextStyle}"/>
+            </StackPanel>
+            <Button.ToolTip>
+                <ToolTip PlacementTarget="{Binding ElementName= _STAFF_BUTTON}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Groupes" Style="{StaticResource ToolTipHeaderStyle}"></Label>
+                        <TextBlock Style="{StaticResource ToolTipTextStyle}"  TextWrapping="Wrap">
+                        Enregister les groupes
+                        </TextBlock>
+                    </StackPanel>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+
+        <Button Name="_LIST_INS" Grid.Column="0" Grid.Row="2" Style="{DynamicResource FontButton}" Click="_LIST_INS_Click">
+            <StackPanel Margin="0,0,0,-10">
+                <!--<Image Source = "{StaticResource AgendaIcon}" Width="150" Height="150"/>-->
+                <TextBlock Text="Liste Inscriptions" Style="{DynamicResource ButtonTextStyle}"/>
+            </StackPanel>
+
+            <Button.ToolTip>
+                <ToolTip PlacementTarget="{Binding ElementName= _AGENDA_BUTTON}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Liste Inscription" Style="{StaticResource ToolTipHeaderStyle}"/>
+                        <TextBlock  Style="{StaticResource ToolTipTextStyle}" TextWrapping="Wrap">
+                        Liste Inscription
+                        </TextBlock>
+                    </StackPanel>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+
+    </Grid>
+
+</Window>
